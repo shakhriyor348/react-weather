@@ -7,7 +7,7 @@ import MonthStatistics from "./pages/MonthStatistics";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

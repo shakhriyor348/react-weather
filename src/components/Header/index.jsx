@@ -1,24 +1,31 @@
 import React from 'react'
+import Select from 'react-select'
+import { Link } from "react-router-dom";
 import GlobalSvgSelector from '../../assets/icons/global/GlobalSvgSelector'
 
 import classes from './Header.module.scss'
 
 const Header = () => {
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+    ]
     return (
         <header className={classes['header']}>
-            <div className={classes['wrapper']}>
+            <Link to={'/'} className={classes['wrapper']}>
                 <div className={classes['logo']}>
                     <GlobalSvgSelector id='headerLogo' />
                 </div>
                 <div className={classes['title']}>
                     React weather
                 </div>
-            </div>
+            </Link>
             <div className={classes['wrapper']}>
                 <div className={classes['change_theme']}>
                     <GlobalSvgSelector id='changeTheme' />
+                    <Select options={options} />
                 </div>
-                
             </div>
         </header>
     )
