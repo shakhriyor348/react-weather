@@ -1,0 +1,111 @@
+@import '../../styles/variables.scss';
+
+.days {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+    background: $light_bg;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: $box_Shadow;
+    margin-top: 7px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(71, 147, 255, 0.2);
+    border-radius: 10px;
+    max-width: 149px;
+    width: 100%;
+    padding: 11px 11px 0 11px;
+    transition: .5s;
+    cursor: pointer;
+    min-height: 200px;
+
+    &__img {
+        svg {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    &__day {
+        margin-bottom: 7px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: $black_color;
+    }
+
+    &__date {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: $base_color;
+        margin-bottom: 12px;
+    }
+
+    &__temp {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: $black_color;
+    }
+
+    &__tempNight {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        color: $base_color;
+    }
+
+    &__info {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: $base_color;
+        margin-top: 6px;
+    }
+
+    &:hover {
+        box-shadow: 0px 3px 20px rgba(147, 144, 144, 0.28);
+    }
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+
+    &__wrapper {
+        display: flex;
+        column-gap: 15px;
+    }
+
+    &__cancel,
+    &__tab {
+        background: $light_bg;
+        box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+        border-radius: 5px;
+        padding: 9px 20px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: $black_color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    &__tab {
+        &.active {
+            background: $primary_color;
+            color: $white_color;
+        }
+    }
+}

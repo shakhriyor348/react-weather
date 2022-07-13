@@ -8,7 +8,7 @@
     background: $light_bg;
     box-shadow: $box_Shadow;
     border-radius: 20px;
-
+    
     &-cloud {
         position: absolute;
         top: 0;
@@ -22,7 +22,7 @@
     align-items: center;
     margin-bottom: 25px;
     column-gap: 20px;
-
+    z-index: 99;
     &:last-of-type {
         margin-bottom: 0;
     }
