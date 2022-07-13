@@ -1,21 +1,27 @@
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    margin-top: 20px;
+    margin-bottom: 30px;
 
     .wrapper {
         display: flex;
         align-items: center;
         column-gap: 20px;
-    }
-    .change_theme {
-        display: flex;
-        align-items: center; 
-        column-gap: 20px;
+        text-decoration: none;
     }
 
+  
     .title {
-        
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #4793FF;
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .change_theme {
+        cursor: pointer;
     }
 }

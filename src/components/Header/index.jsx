@@ -7,10 +7,23 @@ import classes from './Header.module.scss'
 
 const Header = () => {
     const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
+        { value: 'Tashkent', label: 'Ташкент' },
+        { value: 'Samarkand', label: 'Самарканд' },
+        { value: 'Buxara', label: 'Бухара' }
     ]
+    const colorStyles = {
+        control: (styles) => ({
+            ...styles,
+            backgroundColor: 'rgba(71, 147, 255, 0.2);',
+            borderRadius: '10px',
+            border: 'none',
+            width: '194px',
+            height: '37px',
+            zIndex: '100',
+            outLine: 'none',
+            boxShadow: 'none',
+        })
+    }
     return (
         <header className={classes['header']}>
             <Link to={'/'} className={classes['wrapper']}>
@@ -24,8 +37,8 @@ const Header = () => {
             <div className={classes['wrapper']}>
                 <div className={classes['change_theme']}>
                     <GlobalSvgSelector id='changeTheme' />
-                    <Select options={options} />
                 </div>
+                <Select options={options} styles={colorStyles} defaultValue={options[0]} />
             </div>
         </header>
     )
