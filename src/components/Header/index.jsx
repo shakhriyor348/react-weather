@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Select from 'react-select'
 import { Link } from "react-router-dom";
 import GlobalSvgSelector from '../../assets/icons/global/GlobalSvgSelector'
 
 import classes from './Header.module.scss'
 
+
 const Header = () => {
+    const [theme, setTheme] = useState('light');
+
     const options = [
         { value: 'Tashkent', label: 'Ташкент' },
         { value: 'Samarkand', label: 'Самарканд' },
@@ -14,7 +17,7 @@ const Header = () => {
     const colorStyles = {
         control: (styles) => ({
             ...styles,
-            backgroundColor: 'rgba(71, 147, 255, 0.2);',
+            backgroundColor: 0 ? '#4f4f4f' : 'rgba(71, 147, 255, 0.2);',
             borderRadius: '10px',
             border: 'none',
             width: '194px',
@@ -22,7 +25,18 @@ const Header = () => {
             zIndex: '100',
             outLine: 'none',
             boxShadow: 'none',
+        }),
+        singleValue: (styles) => ({
+            ...styles,
+            color: 0 ? '#fff' : '#000'
         })
+    }
+
+    const changeTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+
+        const root = document.querySelector(':root') 
+        root.style.setProperty('--body_bg_default', `var(--body_bg_${theme})`)
     }
     return (
         <header className={classes['header']}>
@@ -35,7 +49,7 @@ const Header = () => {
                 </div>
             </Link>
             <div className={classes['wrapper']}>
-                <div className={classes['change_theme']}>
+                <div className={classes['change_theme']} onClick={changeTheme}>
                     <GlobalSvgSelector id='changeTheme' />
                 </div>
                 <Select options={options} styles={colorStyles} defaultValue={options[0]} />

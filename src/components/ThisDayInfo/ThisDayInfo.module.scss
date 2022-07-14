@@ -5,7 +5,7 @@
     padding: 40px;
     max-width: 750px;
     width: 100%;
-    background: $light_bg;
+    background: var(--components_bg_default);
     box-shadow: $box_Shadow;
     border-radius: 20px;
     
@@ -48,7 +48,7 @@
             font-weight: 400;
             font-size: 14px;
             line-height: 17px;
-            color: $black_color;
+            color: var(--text-color-default);
         }
     }
 }
