@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Select from 'react-select'
 import { Link } from "react-router-dom";
 import GlobalSvgSelector from '../../assets/icons/global/GlobalSvgSelector'
 
 import classes from './Header.module.scss'
+import { useTheme } from '../../hooks/useTheme';
+import { Theme } from '../../context/ThemeContext';
 
 
 const Header = () => {
-    const [theme, setTheme] = useState('light');
+    const theme = useTheme()
 
     const options = [
         { value: 'Tashkent', label: 'Ташкент' },
@@ -17,7 +19,7 @@ const Header = () => {
     const colorStyles = {
         control: (styles) => ({
             ...styles,
-            backgroundColor: 0 ? '#4f4f4f' : 'rgba(71, 147, 255, 0.2);',
+            backgroundColor: theme.theme === Theme.DARK ? '#4f4f4f' : 'rgba(71, 147, 255, 0.2);',
             borderRadius: '10px',
             border: 'none',
             width: '194px',
@@ -28,16 +30,15 @@ const Header = () => {
         }),
         singleValue: (styles) => ({
             ...styles,
-            color: 0 ? '#fff' : '#000'
+            color: theme.theme === Theme.DARK ? '#fff' : '#000'
         })
     }
-
     const changeTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
-
-        const root = document.querySelector(':root') 
-        root.style.setProperty('--body_bg_default', `var(--body_bg_${theme})`)
+        theme.changeTheme(theme.theme === Theme.DARK ? Theme.LIGHT : Theme.DARK)
+        
     }
+
+
     return (
         <header className={classes['header']}>
             <Link to={'/'} className={classes['wrapper']}>

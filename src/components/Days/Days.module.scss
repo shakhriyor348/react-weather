@@ -16,7 +16,7 @@
 .card {
     display: flex;
     flex-direction: column;
-    background: var(--card-background-default);
+    background: var(--card-background_default);
     border-radius: 10px;
     max-width: 149px;
     width: 100%;
@@ -37,7 +37,7 @@
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        color: var(--text-color-default);
+        color: var(--text-color_default);
     }
 
     &__date {
@@ -52,7 +52,7 @@
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        color: var(--text-color-default);
+        color: var(--text-color_default);
     }
 
     &__tempNight {
@@ -71,7 +71,7 @@
     }
 
     &:hover {
-        box-shadow: var(--card-shadow-default);
+        box-shadow: var(--card-shadow_default);
     }
 }
 
@@ -95,7 +95,7 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 22px;
-        color: var(--text-color-default);
+        color: var(---color-default);
         display: flex;
         align-items: center;
         justify-content: center;
